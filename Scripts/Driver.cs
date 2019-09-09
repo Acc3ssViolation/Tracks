@@ -24,7 +24,7 @@ public class Driver : MonoBehaviour
         throttle = 0;
     }
 
-    public void Start()
+    public virtual void Start()
     {
         GameObject.Find("Throttle Slider").GetComponent<UnityEngine.UI.Slider>().onValueChanged.AddListener(delegate { SetThrottle(GameObject.Find("Throttle Slider").GetComponent<UnityEngine.UI.Slider>()); });
         GameObject.Find("Reverser Slider").GetComponent<UnityEngine.UI.Slider>().onValueChanged.AddListener(delegate { SetReverser(GameObject.Find("Reverser Slider").GetComponent<UnityEngine.UI.Slider>()); });
@@ -32,7 +32,7 @@ public class Driver : MonoBehaviour
         speedText = GameObject.Find("Speed Display").GetComponent<UnityEngine.UI.Text>();
     }
 
-    public void Update()
+    public virtual void Update()
     {
         if(Engines.Count > 0)
         {

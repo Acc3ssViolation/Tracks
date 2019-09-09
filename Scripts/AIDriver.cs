@@ -8,9 +8,13 @@ public class AIDriver : Driver
 {
     private bool isBraking = false;
 
-    public void Update()
+    public override void Start()
     {
-        base.Update();
+        // Do not call base so we don't mess with the UI.
+    }
+
+    public override void Update()
+    {
         if(Engines.Count > 0)
         {
             SetReverser(Direction.Forward);
